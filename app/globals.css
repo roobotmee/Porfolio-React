@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 262.1 83.3% 57.8%; /* More vibrant purple */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 224 71.4% 4.1%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 224 71.4% 4.1%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%; /* Ring color matches primary */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 0 0% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 0 0% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 262.1 83.3% 62.8%; /* Slightly lighter purple for dark mode */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 13% 18%;
+    --muted-foreground: 220 8.9% 56.1%; /* Adjusted for dark mode */
+    --accent: 220 13% 18%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 28%; /* Darker border */
+    --input: 220 13% 28%; /* Darker input */
+    --ring: 262.1 83.3% 62.8%; /* Ring color matches dark primary */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    scroll-behavior: smooth; /* For smooth scrolling with #links */
+  }
+}
+
+/* Custom scrollbar (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/70;
+}
